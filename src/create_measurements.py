@@ -3,7 +3,6 @@ import sys
 import random
 import time
 
-
 def check_args(file_args):
     """
     Sanity checks out input and prints out usage if input is not a positive integer
@@ -23,7 +22,7 @@ def build_weather_station_name_list():
     Grabs the weather station names from example data provided in repo and dedups
     """
     station_names = []
-    with open('./data/weather_stations.csv', 'r', encoding="utf-8") as file:
+    with open(r'C:\Users\ACER\Desktop\Rebeca\aula05-bootcamp-python\One-Billion-Row-Challenge-Python\data\weather_stations.csv', 'r', encoding="utf-8") as file:
         file_contents = file.read()
     for station in file_contents.splitlines():
         if "#" in station:
@@ -96,7 +95,7 @@ def build_test_data(weather_station_names, num_rows_to_create):
     print('Criando o arquivo... isso vai demorar uns 10 minutos...')
 
     try:
-        with open("./data/measurements.txt", 'w', encoding="utf-8") as file:
+        with open("../data/measurements.txt", 'w', encoding="utf-8") as file:
             for s in range(0,num_rows_to_create // batch_size):
                 
                 batch = random.choices(station_names_10k_max, k=batch_size)
@@ -111,7 +110,7 @@ def build_test_data(weather_station_names, num_rows_to_create):
     
     end_time = time.time()
     elapsed_time = end_time - start_time
-    file_size = os.path.getsize("./data/measurements.txt")
+    file_size = os.path.getsize("../data/measurements.txt")
     human_file_size = convert_bytes(file_size)
  
     print("Arquivo escrito com sucesso data/measurements.txt")
