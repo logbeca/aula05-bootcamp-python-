@@ -70,3 +70,8 @@ if __name__ == "__main__":
     path_do_txt: Path = Path("data/measurements.txt")
     # 100M > 5 minutos.
     resultados = processar_temperaturas(path_do_txt)
+
+    ## se a variável name for "main", execute. se rodar python com o nome do arquivo,
+    # ## roda o main
+
+    ## se quiser rodar  o módulo, só processar_temperaturas, pode puxar como módulo, não roda o main . 
